@@ -88,7 +88,7 @@ gulp.task('styles', function () {
     'app/styles/*.scss',
     'app/styles/**/*.css'
   ])
-    .pipe($.changed('.tmp/styles', {extension: '.css'}))
+    /*.pipe($.changed('.tmp/styles', {extension: '.css'}))*/
     .pipe($.sass({
       precision: 10,
       onError: console.error.bind(console, 'Sass error:'),
@@ -97,7 +97,7 @@ gulp.task('styles', function () {
     .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate And Minify Styles
-    .pipe($.if('*.css', $.csso()))
+    /*.pipe($.if('*.css', $.csso()))*/
     .pipe(gulp.dest('dist/styles'))
     .pipe($.size({title: 'styles'}));
 });

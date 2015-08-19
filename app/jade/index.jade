@@ -1,6 +1,20 @@
 include _/_page
 
 +page('home', 'Home')
+  .hero
+    img.hero__bubbles(src='images/sse_bubbles.png')
+    img.hero__rocket(src='images/sse_rocket.png')
+    img.hero__logo--color(src='images/sse_logo-shape.png')
+    .content
+      h1.hero__heading: .x Getting Serious<br>About Gaming
+      .hero__time: .x August 20, 2015 @ 6:00 PM
+      .hero__location: .x 4804 Granite Drive, Rocklin, CA
+      br
+      a.btn__primary
+        .x Mark Your Calendar »
+      br
+      a.btn__secondary
+        .x Event Details »
   main
     h1 Hello this is the home page.
     p Lorem ipsum Tempor pariatur amet reprehenderit consectetur commodo elit eu amet culpa.

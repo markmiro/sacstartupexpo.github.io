@@ -1,6 +1,19 @@
 @import "reset";    // Reset all styles
 @import "bourbon";  // Use this for its functions and addons
+@import "util";     // Need this for grid settings to do stuff. Need to put this between bourbon and neat
 @import "neat";     // Grid framework
+
+
+$large-size: 1680px;
+$medium-size: 1100px;
+$small-size: 750px;
+$tiny-size: 380px;
+$large: new-breakpoint(max-width $large-size 12);
+$medium: new-breakpoint(max-width $medium-size 12);
+$small: new-breakpoint(max-width $small-size 4);
+$tiny: new-breakpoint(max-width $tiny-size 2);
+
+@import "components/components";
 
 * { box-sizing: border-box; }
 
@@ -12,4 +25,73 @@ section {
   @include outer-container;
   aside { @include span-columns(3); }
   article { @include span-columns(9); }
+}
+
+$dark-blue: #1A274F;
+$light-blue: #559CC9;
+$yellow: #FDED0B;
+
+body {
+  font-family: 'Bebas Neue';
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+.nav {
+  // position: fixed;
+}
+
+.hero {
+  background-color: $dark-blue;
+  position: relative;
+  height: 100vh;
+  color: $yellow;
+  font-family: 'Bebas Neue';
+}
+
+.content {
+  width: 85%;
+  @include outer-container();
+}
+
+.hero__bubbles {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.hero__logo--color {
+  width: msvw(11);
+}
+
+.hero__rocket {
+  width: msvw(11);
+}
+
+.hero__heading {
+  @include msvw-font-size(7, 5);
+}
+.hero__time {
+  @include msvw-font-size(4, 0);
+}
+.hero__location {
+  @include msvw-font-size(2, 0);
+}
+.btn {
+  @include msvw-font-size(4, 0);
+  border-width: 1px;
+  border-color: $yellow;
+  border-style: solid;
+  padding: msvw(5);
+  display: inline-block;
+  margin-bottom: msvw(4);
+}
+.btn__primary {
+  @extend .btn;
+}
+.btn__secondary {
+  @extend .btn;
 }

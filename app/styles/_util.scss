@@ -1,0 +1,116 @@
+$font-horizontal-offset: -0.05;
+$font-vertical-offset: 0.7;
+$font-size-adjustment: 1.42;
+$line-height-adjust: 0.965;
+
+@function airem($px-size) {
+  @return ($px-size / 16 / 2) * 1rem;
+}
+
+@function aivw($px-size) {
+  @return ($px-size / 7.5) * 1vmin;
+}
+
+// $start-size: 10;
+$start-size: 2.6;
+$ms-font-base-increment: 2;
+$ratio: 1.45;
+@function msrem($increment) {
+  @return modular-scale($increment, airem($start-size), $ratio);
+}
+
+@mixin msrem-font-size($increment, $line-height: 6) {
+  .x {
+    $font-size: msrem($increment + $ms-font-base-increment);
+    font-size: $font-size * $font-size-adjustment;
+    line-height: ($font-size + msrem($line-height)) * $line-height-adjust;
+    transform: translate($font-size * $font-horizontal-offset, $font-size * $font-vertical-offset/4.5);
+  }
+  // transform: translate($font-size * $font-horizontal-offset, $font-size * $font-vertical-offset);
+}
+
+@function msvw($increment) {
+  @return modular-scale($increment, aivw($start-size), $ratio);
+}
+
+@mixin msvw-font-size($increment, $line-height: 6) {
+  .x {
+    $font-size: msvw($increment + $ms-font-base-increment);
+    font-size: $font-size * $font-size-adjustment;
+
+    // background: red !important;
+    // border-top: 1px solid green;
+    // height: $font-size + msvw($line-height);
+    line-height: ($font-size + msvw($line-height)) * $line-height-adjust;
+    transform: translate($font-size * $font-horizontal-offset, $font-size * $font-vertical-offset/4.5);
+    // margin-bottom: -$font-size * $font-vertical-offset/4.5;
+  }
+  // transform: translate($font-size * $font-horizontal-offset, $font-size * $font-vertical-offset);
+}
+
+@function ai($px-size) {
+  // @return ($px-size / 16 / 2) * 1em;
+  @return airem($px-size);
+}
+
+// Bourbon Neat
+$max-width: 40rem;
+$ms-content-padding: 10;
+$border-width: 1px;
+
+@import "components/sample-cover-component";
+body {
+  position: relative;
+}
+.baseline-grid {
+  @include cover;
+  background: rgba(black, 0.1);
+  z-index: 100;
+  overflow: hidden;
+  pointer-events: none;
+  .baseline-grid__row {
+    height: msvw(7);
+    border-bottom: 1px dotted black;
+    margin-top: -1px;
+  }
+}
+
+.msvw {
+  @for $i from 1 through 6 {
+    .row-#{$i} {
+      height: msvw($i + 2);
+      background: rgba(black, 0.1);
+    }
+  }
+  @for $i from 1 through 6 {
+    .size-#{$i} {
+      @include msvw-font-size($i, 0);
+    }
+  }
+  @for $i from 1 through 10 {
+    .block-#{$i} {
+      height: msvw($i);
+      background: rgba(black, 0.1);
+      margin-top: 1px;
+    }
+  }
+}
+
+.msrem {
+  @for $i from 1 through 6 {
+    .size-#{$i} {
+      @include msrem-font-size($i, 0);
+    }
+  }
+  @for $i from 1 through 10 {
+    .block-#{$i} {
+      height: msrem($i);
+      background: rgba(black, 0.1);
+      margin-top: 1px;
+    }
+  }
+}
+
+.styleguide .content {
+  // background: rgba(black, 0.1);
+}
