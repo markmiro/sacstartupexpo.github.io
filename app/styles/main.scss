@@ -10,6 +10,7 @@ $small-size: 750px;
 $tiny-size: 380px;
 $tiny: new-breakpoint(max-width $tiny-size 2);
 
+
 @import "components/components";
 
 * {
