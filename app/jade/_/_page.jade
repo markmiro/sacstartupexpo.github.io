@@ -4,14 +4,16 @@ mixin title(title)
       .hero__content
         h1.hero__heading= title
 
+- var TITLE_BASE = 'Sac Startup Expo'
+
 mixin page(name, title)
   doctype html
   html(lang='en')
     head
       if title
-        title= title + ' - Sac Startup Expo'
+        title= title + ' - ' + TITLE_BASE
       else
-        title Sac Startup Expo
+        title= TITLE_BASE
 
       include _meta
 
