@@ -1,7 +1,12 @@
-$font-horizontal-offset: -0.05;
-$font-vertical-offset: 0.7;
-$font-size-adjustment: 1.42;
-$line-height-adjust: 0.965;
+$font-horizontal-offset: 0 !default;
+$font-vertical-offset: 0 !default;
+$font-size-adjustment: 1.4 !default;
+$line-height-adjust: 1 !default;
+
+// $font-horizontal-offset: -0.05;
+// $font-vertical-offset: 0.7;
+// $font-size-adjustment: 1.42;
+// $line-height-adjust: 0.965;
 
 @function airem($px-size) {
   @return ($px-size / 16 / 2) * 1rem;

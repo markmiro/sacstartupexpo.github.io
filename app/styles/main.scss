@@ -32,12 +32,14 @@ $light-blue: #559CC9;
 $yellow: #FDED0B;
 
 body {
-  font-family: 'Bebas Neue';
-  font-weight: 300;
+  // font-family: 'Bebas Neue';
+  font-family: 'bebas_neuebook';
+  // font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-family: 'bebas_neuebold';
+  // font-weight: 600;
 }
 
 .nav {
@@ -49,7 +51,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   height: 100vh;
   color: $yellow;
-  font-family: 'Bebas Neue';
 }
 
 .content {
