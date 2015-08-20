@@ -1,11 +1,11 @@
 include _/_page
 
 mixin read(url)
-  a.btn.btn--primary.u-arrow(href=url) Read it
+  a.btn.btn--block.u-arrow(href=url) Read it
   
 +page('news', 'In the News')
   +title('In the News')
-  .content
+  .content.u-center
     h2
       | Sacramento Startup Expo will draw game developers to Rocklin
       small Sacramento Business Journal
@@ -17,11 +17,11 @@ mixin read(url)
     h2
       | Sacramento may be the next Silicon Valley
       small Good Day Sacramento
-    a.btn--primary.u-arrow(href='http://gooddaysacramento.cbslocal.com/video/3270468-tech-party/') Watch Video
+    a.btn.btn--block.u-arrow(href='http://gooddaysacramento.cbslocal.com/video/3270468-tech-party/') Watch Video
     h2
       | Network with fellow tech geeks at a one of a kind party
       small Good Day Sacramento
-    a.btn--primary.u-arrow(href='http://gooddaysacramento.cbslocal.com/video/3270489-tech-party-pt-2/') Watch Video
+    a.btn.btn--block.u-arrow(href='http://gooddaysacramento.cbslocal.com/video/3270489-tech-party-pt-2/') Watch Video
     h2
       | Sacramento Startup Expo II focuses on local app development, and booze
       small Sacramento Business Journal

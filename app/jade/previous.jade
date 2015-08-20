@@ -1,11 +1,11 @@
 include _/_page
 
 mixin fbevent(id)
-  a.btn.btn--primary.u-arrow(href='https://www.facebook.com/events/'+id) Facebook Event
+  a.btn.btn--block.u-arrow(href='https://www.facebook.com/events/'+id) Facebook Event
 
 +page('previous', 'Previous Events')
   +title('Previous Events')
-  .content
+  .content.u-center
     h2
       | Startup Summer Party
       small with Startup Grind &amp; SARTA

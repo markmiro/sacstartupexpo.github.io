@@ -15,7 +15,7 @@ $tiny: new-breakpoint(max-width $tiny-size 2);
 * {
   box-sizing: border-box;
   transition-property: all;
-  transition-duration: 0.2s;
+  transition-duration: 0.1s;
   // transition-timing-function: ease-in-out;
 }
 
@@ -231,8 +231,8 @@ hr {
   margin: msrem(4);
   display: block;
   text-align: center;
-  @include msvw-font-size(4, 4);
-  padding: msvw(7);
+  @include msrem-font-size(4, 4);
+  padding: msrem(7);
 }
 
 .nav {
