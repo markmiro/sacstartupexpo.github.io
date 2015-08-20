@@ -25,7 +25,7 @@ $yellow: #FDED0B;
 
 body {
   // font-family: 'Bebas Neue';
-  font-family: 'bebas_neuebook', 'Roboto Condensed', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-family: 'bebas_neueregular', 'Roboto Condensed', 'Helvetica Neue', 'Helvetica', sans-serif;
   @include msrem-font-size(4, 6);
   color: rgba($dark-blue, 0.7);
   @include media(max-width $tiny-size) {
@@ -34,6 +34,9 @@ body {
   }
 }
 
+a {
+  color: $dark-blue;
+}
 a.active {
   color: gray !important;
 }
@@ -50,19 +53,23 @@ section {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'bebas_neuebold';
   color: $dark-blue;
+  margin-bottom: msrem(7);
   // font-weight: 600;
 }
 
 h2 {
   @include msvw-font-size(6, 3);
   margin-top: msvw(10);
-  margin-bottom: msrem(7);
   small {
     display: block;
     @include msvw-font-size(4, 5);
-    font-family: 'bebas_neuebook';
+    font-family: 'bebas_neueregular';
     color: $light-blue;
   }
+}
+
+h3 {
+  @include msrem-font-size(5, 5);
 }
 
 p {
@@ -95,6 +102,9 @@ hr {
   align-items: center;
   flex-wrap: wrap;
   align-content: center;
+  h1 {
+    margin-bottom: 0;
+  }
 }
 .hero--min .content {
   margin-top: msrem(13);
@@ -108,6 +118,7 @@ hr {
 }
 .hero__content {
   text-align: center;
+  margin-top: msrem(11);
   // position: relative;
   // padding-left: 2vw;
   // margin-left: 2vw;
@@ -186,7 +197,6 @@ hr {
 }
 .hero__time {
   @include msrem-font-size(5, 0);
-  margin-top: msrem(0);
   &:before {
     content: '—';
     display: block;
@@ -196,26 +206,33 @@ hr {
 .hero__location {
   @include msrem-font-size(4, 0);
   margin-top: msrem(5);
+  margin-bottom: msrem(5);
 }
 .btn {
-  @include msvw-font-size(4, 0);
+  @include msrem-font-size(4, 4);
   border-width: 1px;
-  border-color: $yellow;
   border-style: solid;
-  padding: msvw(5);
+  padding: msrem(5);
   display: inline-block;
-  margin-bottom: msvw(4);
-  color: $yellow;
+  margin-bottom: msrem(4);
+  color: $dark-blue;
+  border-color: $dark-blue;
   text-decoration: none;
 }
 .btn--primary {
-  @extend .btn;
-  background: transparent;
-  color: $dark-blue;
-  border-color: $dark-blue
+  background: $dark-blue;
+  color: white;
 }
-.btn--secondary {
-  @extend .btn;
+.btn--inverted {
+  color: $yellow;
+  border-color: $yellow;
+}
+.btn--block {
+  margin: msrem(4);
+  display: block;
+  text-align: center;
+  @include msvw-font-size(4, 4);
+  padding: msvw(7);
 }
 
 .nav {
