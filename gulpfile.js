@@ -61,8 +61,13 @@ gulp.task('images', function () {
     .pipe($.size({title: 'images'}));
 });
 
+gulp.task('jsx', function () {
+  return gulp.src('app/scripts/*.jsx')
+    .pipe(gulp.dest('dist/scripts'))
+});
+
 // Copy All Files At The Root Level (app)
-gulp.task('copy', function () {
+gulp.task('copy', ['jsx'], function () {
   return gulp.src([
     'app/*',
     '!app/bower_components',
@@ -163,6 +168,7 @@ gulp.task('serve', ['styles', 'html'], function () {
   gulp.watch(['app/**/*.jade'], ['html', reload]);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['app/scripts/**/*.jsx'], ['jsx']);
   gulp.watch(['app/images/**/*'], reload);
 });
 

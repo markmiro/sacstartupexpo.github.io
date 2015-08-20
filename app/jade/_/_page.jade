@@ -14,12 +14,12 @@ mixin page(name, title)
 
       //--Page styles
       link(rel='stylesheet', href='/styles/main.css')
+      
+      script(src='https://fb.me/react-0.13.3.min.js')
+      script(src='https://fb.me/JSXTransformer-0.13.3.js')
 
     body
       +nav(name)
       block
-      // build:js /scripts/main.min.js
-      script(src='/scripts/main.js')
-      script(src='/scripts/main-helper.js')
-      // endbuild
+      script(src='/scripts/main.jsx' type='text/jsx')
       //- include _analytics
