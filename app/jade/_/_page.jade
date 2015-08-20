@@ -22,5 +22,14 @@ mixin page(name, title)
     body
       +nav(name)
       block
+      .footer
+        .content
+          h3 Share the love
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          .addthis_sharing_toolbox
+          hr
+          .copyright
+            © Copyright 2015. All Rights Reserved
       script(src='/scripts/main.jsx' type='text/jsx')
-      //- include _analytics
+      include _sharing
+      include _analytics

@@ -25,12 +25,10 @@ $ratio: 1.45;
 }
 
 @mixin msrem-font-size($increment, $line-height: 6) {
-  .x {
-    $font-size: msrem($increment + $ms-font-base-increment);
-    font-size: $font-size * $font-size-adjustment;
-    line-height: ($font-size + msrem($line-height)) * $line-height-adjust;
-    transform: translate($font-size * $font-horizontal-offset, $font-size * $font-vertical-offset/4.5);
-  }
+  $font-size: msrem($increment + $ms-font-base-increment);
+  font-size: $font-size * $font-size-adjustment;
+  line-height: ($font-size + msrem($line-height)) * $line-height-adjust;
+  transform: translate($font-size * $font-horizontal-offset, $font-size * $font-vertical-offset/4.5);
   // transform: translate($font-size * $font-horizontal-offset, $font-size * $font-vertical-offset);
 }
 
@@ -39,17 +37,15 @@ $ratio: 1.45;
 }
 
 @mixin msvw-font-size($increment, $line-height: 6) {
-  .x {
-    $font-size: msvw($increment + $ms-font-base-increment);
-    font-size: $font-size * $font-size-adjustment;
+  $font-size: msvw($increment + $ms-font-base-increment);
+  font-size: $font-size * $font-size-adjustment;
 
-    // background: red !important;
-    // border-top: 1px solid green;
-    // height: $font-size + msvw($line-height);
-    line-height: ($font-size + msvw($line-height)) * $line-height-adjust;
-    transform: translate($font-size * $font-horizontal-offset, $font-size * $font-vertical-offset/4.5);
-    // margin-bottom: -$font-size * $font-vertical-offset/4.5;
-  }
+  // background: red !important;
+  // border-top: 1px solid green;
+  // height: $font-size + msvw($line-height);
+  line-height: ($font-size + msvw($line-height)) * $line-height-adjust;
+  transform: translate($font-size * $font-horizontal-offset, $font-size * $font-vertical-offset/4.5);
+  // margin-bottom: -$font-size * $font-vertical-offset/4.5;
   // transform: translate($font-size * $font-horizontal-offset, $font-size * $font-vertical-offset);
 }
 
