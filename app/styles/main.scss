@@ -79,12 +79,12 @@ hr {
 .hero {
   background: linear-gradient($dark-blue 60%, mix($dark-blue, $light-blue, 70%));
   position: relative;
-  height: 90vh;
-  @include media(min-width $small-size) {
-    height: 100vh;
-  }
   color: $yellow;
   overflow: hidden;
+  .content {
+    margin-top: msrem(13);
+    margin-bottom: msrem(9);
+  }
 
   display: flex;
   flex-direction: row;
@@ -92,6 +92,12 @@ hr {
   align-items: center;
   flex-wrap: wrap;
   align-content: center;
+}
+.hero--max {
+  height: 90vh;
+  @include media(min-width $small-size) {
+    height: 100vh;
+  }
 }
 .hero__content {
   text-align: center;

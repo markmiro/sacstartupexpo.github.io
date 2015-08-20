@@ -1,8 +1,8 @@
 include _/_page
 
 +page('home', 'Home')
-  .hero
-    img.hero__bubbles(src='images/sse_bubbles.svg')
+  .hero.hero--max
+    img.hero__bubbles(src='/images/sse_bubbles.svg')
     .content
       .hero__content
         h1.hero__heading: .x Getting Serious<br>About Gaming
@@ -15,7 +15,7 @@ include _/_page
         //- br
         //- a.btn__secondary
         //-   .x Event Details »
-    img.hero__rocket(src='images/sse_rocket.svg')
+    img.hero__rocket(src='/images/sse_rocket.svg')
   main
     .content
       h2

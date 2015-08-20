@@ -8,10 +8,11 @@ mixin nav(name)
   - var CURRENT_PAGE = name
   nav.nav
     .content--wide
-      img.logo--color(src='images/sse_logo-shape.svg')
+      +link('')
+        img.logo--color(src='/images/sse_logo-shape.svg')
       //- p= 'CURRENT_PAGE: ' + CURRENT_PAGE
       ul
         //- li: +link('') Home
         li: +link('about') About
-        li: +link('about') Previous Events
-        li: +link('about') Contact
+        li: +link('previous') Previous Events
+        li: a(href='mailto:contact@sacstartupexpo.com') Email Us
