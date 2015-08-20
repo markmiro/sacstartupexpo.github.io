@@ -1,7 +1,10 @@
 - var HOME_PAGE = 'home'
+- var CURRENT_PAGE
 
 mixin link(name)
-  a(href='/'+name, class=(CURRENT_PAGE==name || (CURRENT_PAGE==HOME_PAGE && name=='')) ? 'active':'')
+  - var isActive = (name == CURRENT_PAGE) ? 'active' : ''
+  - var url = (name == HOME_PAGE) ? '/' : '/'+name
+  a(href=url, class=isActive+' '+name+'-link nav__link')
     block
 
 mixin nav(name)
@@ -14,5 +17,6 @@ mixin nav(name)
       ul
         //- li: +link('') Home
         li: +link('about') About
+        li: +link('news') In the News
         li: +link('previous') Previous Events
         li: a(href='mailto:contact@sacstartupexpo.com') Email Us

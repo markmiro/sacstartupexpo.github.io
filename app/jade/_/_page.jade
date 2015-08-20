@@ -1,4 +1,8 @@
-include _nav
+mixin title(title)
+  .hero.hero--min
+    .content
+      .hero__content
+        h1.hero__heading= title
 
 mixin page(name, title)
   doctype html
@@ -20,6 +24,7 @@ mixin page(name, title)
       script(src='https://fb.me/JSXTransformer-0.13.3.js')
 
     body
+      include _nav
       +nav(name)
       block
       .footer
@@ -28,8 +33,7 @@ mixin page(name, title)
           <!-- Go to www.addthis.com/dashboard to customize your tools -->
           .addthis_sharing_toolbox
           hr
-          .copyright
-            © Copyright 2015. All Rights Reserved
+          .copyright © Copyright 2015. All Rights Reserved
       script(src='/scripts/main.jsx' type='text/jsx')
       include _sharing
       include _analytics

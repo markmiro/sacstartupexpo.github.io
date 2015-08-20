@@ -1,0 +1,32 @@
+include _/_page
+
+mixin read(url)
+  a.btn--primary.u-arrow(href=url) Read it
+  
++page('news', 'In the News')
+  +title('In the News')
+  .content
+    h2
+      | Sacramento Startup Expo will draw game developers to Rocklin
+      small Sacramento Business Journal
+    +read('http://www.bizjournals.com/sacramento/blog/morning-roundup/2015/08/sacramento-startup-expo-will-draw-game-developers.html?ana=twt')
+    h2
+      | Co-work spaces alter landscape for entrepreneurs
+      small The Sacremento Bee
+    +read('http://www.sacbee.com/news/business/article10901915.html')
+    h2
+      | Sacramento may be the next Silicon Valley
+      small Good Day Sacramento
+    a.btn--primary.u-arrow(href='http://gooddaysacramento.cbslocal.com/video/3270468-tech-party/') Watch Video
+    h2
+      | Network with fellow tech geeks at a one of a kind party
+      small Good Day Sacramento
+    a.btn--primary.u-arrow(href='http://gooddaysacramento.cbslocal.com/video/3270489-tech-party-pt-2/') Watch Video
+    h2
+      | Sacramento Startup Expo II focuses on local app development, and booze
+      small Sacramento Business Journal
+    +read('http://www.bizjournals.com/sacramento/news/2014/11/14/sacramento-startup-expo-ii-focuses-on-local-app.html')
+    h2
+      | Startup Expo gets apps out there in Sacramento
+      small The Sacramento Bee
+    +read('http://www.sacbee.com/news/business/article4026421.html')
