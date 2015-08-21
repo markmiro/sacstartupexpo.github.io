@@ -17,7 +17,7 @@ $line-height-adjust: 1 !default;
 }
 
 // $start-size: 10;
-$start-size: 2.6;
+$start-size: 2.5;
 $ms-font-base-increment: 2;
 $ratio: 1.45;
 @function msrem($increment) {
@@ -57,7 +57,7 @@ $ratio: 1.45;
 // Bourbon Neat
 $max-width: 40rem;
 $ms-content-padding: 10;
-$border-width: 1px;
+$border-width: 2px;
 
 @import "components/sample-cover-component";
 body {

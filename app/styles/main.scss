@@ -36,7 +36,7 @@ body {
 }
 
 a {
-  color: $dark-blue;
+  text-decoration: none;
 }
 a.active {
   color: gray !important;
@@ -130,7 +130,7 @@ hr {
   //   left: 0;
   //   top: 0;
   //   bottom: 0;
-  //   width: 1px;
+  //   width: $border-width;
   // }
 }
 
@@ -162,20 +162,21 @@ hr {
 }
 .content--wide {
   width: 85%;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 60rem;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
 }
-
+.v-spaced {
+  margin-top: msvw(10);
+  margin-bottom: msvw(10);
+}
 
 .hero__bubbles {
   position: absolute;
   bottom: 0;
   height: 30%;
   min-width: 100%;
+  left: 0;
 }
 
 .logo--color {
@@ -211,7 +212,7 @@ hr {
 }
 .btn {
   @include msrem-font-size(4, 4);
-  border-width: 1px;
+  border-width: $border-width;
   border-style: solid;
   padding: msrem(5);
   display: inline-block;
@@ -262,11 +263,46 @@ hr {
     color: $light-blue;
     text-decoration: none;
   }
+  .content--wide {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 }
 
-.content {
-  margin-top: msvw(11);
-  margin-bottom: msvw(11);
+.card {
+  display: block;
+  padding: msvw(7);
+  padding-right: msvw(9);
+  border: $border-width solid rgba($light-blue, 0.5);
+  margin-bottom: msvw(8);
+  h2 {
+    @include msvw-font-size(5, 3);
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'bebas_neueregular';
+    max-width: 40rem;
+    small {
+      margin-top: msvw(2);
+    }
+  }
+  &:hover {
+    background: $yellow;
+    opacity: 1;
+  }
+  position: relative;
+  @extend .u-arrow;
+  &:after {
+    position: absolute;
+    top: 50%;
+    right: msvw(7);
+    font-family: 'bebas_neuebook';
+    opacity: 0.5;
+    @include msvw-font-size(6, 0);
+    transform: translateY(-50%);
+    color: $light-blue;
+  }
 }
 
 .footer {
