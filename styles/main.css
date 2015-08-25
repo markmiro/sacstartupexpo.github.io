@@ -352,6 +352,9 @@ hr {
 .hero__content {
   text-align: center;
   margin-top: 4.8402901292rem; }
+  .hero__content .btn {
+    margin-left: 0.5026666667vmin;
+    margin-right: 0.5026666667vmin; }
 
 .learn-more {
   color: #559CC9;
@@ -410,12 +413,13 @@ hr {
   right: 5%;
   bottom: 5%; }
 
-.hero__heading {
+h1.hero__heading {
   font-size: 13.7515654563vmin;
   line-height: 12.0445878962vmin;
   -webkit-transform: translate(0vmin, 0vmin);
           transform: translate(0vmin, 0vmin);
-  color: #FDED0B; }
+  color: #FDED0B;
+  margin-bottom: 1.0568566667vmin; }
 
 .hero__time {
   font-size: 1.5329479923rem;
@@ -436,18 +440,21 @@ hr {
   margin-bottom: 0.5207908926rem; }
 
 .btn {
-  font-size: 1.0572055119rem;
-  line-height: 1.1143129271rem;
+  font-size: 1.5329479923rem;
+  line-height: 1.4541289845rem;
   -webkit-transform: translate(0rem, 0rem);
           transform: translate(0rem, 0rem);
   border-width: 2px;
   border-style: solid;
-  padding: 0.5207908926rem;
+  padding: 0.7551467942rem;
   display: inline-block;
   margin-bottom: 0.3591661328rem;
   color: #1A274F;
   border-color: #1A274F;
   text-decoration: none; }
+  @media screen and (max-width: 380px)  {
+    .btn {
+      display: block; } }
 
 .btn--primary {
   background: #1A274F;
