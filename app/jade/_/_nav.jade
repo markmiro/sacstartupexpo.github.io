@@ -14,9 +14,9 @@ mixin nav(name)
       +link('')
         img.logo--color(src='/images/sse_logo-shape.svg')
       //- p= 'CURRENT_PAGE: ' + CURRENT_PAGE
-      ul
+      ul.nav__menu
         //- li: +link('') Home
         li: +link('about') About
         li: +link('news') In the News
-        li: +link('previous') Previous Events
+        li: +link('previous') Events
         li: a(href='mailto:contact@sacstartupexpo.com') Email Us

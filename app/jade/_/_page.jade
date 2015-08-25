@@ -21,20 +21,28 @@ mixin page(name, title)
       link(rel='stylesheet', href='/styles/main.css')
       link(rel='stylesheet', href='/fonts/stylesheet.css')
       
-      script(src='https://fb.me/react-0.13.3.min.js')
-      script(src='https://fb.me/JSXTransformer-0.13.3.js')
+      //- script(src='https://fb.me/react-0.13.3.min.js')
+      //- script(src='https://fb.me/JSXTransformer-0.13.3.js')
 
     body
       include _nav
       +nav(name)
       block
       .footer
-        .content
+        .content.v-spaced
           h3 Share the &lt;3
           <!-- Go to www.addthis.com/dashboard to customize your tools -->
           .addthis_sharing_toolbox
           hr
           .copyright © Copyright 2015. All Rights Reserved
-      script(src='/scripts/main.jsx' type='text/jsx')
+      //- script(src='/scripts/main.jsx' type='text/jsx')
+      
+      // build:js /scripts/vendor.min.js
+      script(src='/bower_components/jquery/dist/jquery.js')
+      script(src='/bower_components/jquery-unorphanize/unorphanize.jquery.js')
+      // endbuild
+      // build:js /scripts/main.min.js
+      script(src='/scripts/main.js')
+      // endbuild
       include _sharing
       include _analytics

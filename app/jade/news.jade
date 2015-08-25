@@ -1,35 +1,28 @@
 include _/_page
 
 mixin read(url)
-  a.card(href=url)
-    block
+  .block
+    .block__content.content
+      block
+      a.btn.btn--primary.u-arrow.block__btn(href=url) Read
   
 +page('news', 'In the News')
   +title('In the News')
-  .content.content--wide.v-spaced
-    +read('http://www.bizjournals.com/sacramento/blog/morning-roundup/2015/08/sacramento-startup-expo-will-draw-game-developers.html?ana=twt')
-      h2
-        | Sacramento Startup Expo will draw game developers to Rocklin
-        small Sacramento Business Journal
-    +read('http://www.sacbee.com/news/business/article10901915.html')
-      h2
-        | Co-work spaces alter landscape for entrepreneurs
-        small The Sacremento Bee
-    .card
-      h2
-        | Sacramento may be the next Silicon Valley
-        small Good Day Sacramento
-      //- a.btn(href='http://gooddaysacramento.cbslocal.com/video/3270468-tech-party/') Watch Video
-    .card
-      h2
-        | Network with fellow tech geeks at a one of a kind party
-        small Good Day Sacramento
-      //- a.btn(href='http://gooddaysacramento.cbslocal.com/video/3270489-tech-party-pt-2/') Watch Video
-    +read('http://www.bizjournals.com/sacramento/news/2014/11/14/sacramento-startup-expo-ii-focuses-on-local-app.html')
-      h2
-        | Sacramento Startup Expo II focuses on local app development, and booze
-        small Sacramento Business Journal
-    +read('http://www.sacbee.com/news/business/article4026421.html')
-      h2
-        | Startup Expo gets apps out there in Sacramento
-        small The Sacramento Bee
+  +read('http://www.bizjournals.com/sacramento/blog/morning-roundup/2015/08/sacramento-startup-expo-will-draw-game-developers.html?ana=twt')
+    h2 Sacramento Startup Expo will draw game developers to Rocklin
+    .subheading Sacramento Business Journal
+  +read('http://www.sacbee.com/news/business/article10901915.html')
+    h2 Co-work spaces alter landscape for entrepreneurs
+    .subheading The Sacremento Bee
+  +read('http://gooddaysacramento.cbslocal.com/video/3270468-tech-party/')
+    h2 Sacramento may be the next Silicon Valley
+    .subheading Good Day Sacramento
+  +read('http://gooddaysacramento.cbslocal.com/video/3270489-tech-party-pt-2/')
+    h2 Network with fellow tech geeks at a one of a kind party
+    .subheading Good Day Sacramento
+  +read('http://www.bizjournals.com/sacramento/news/2014/11/14/sacramento-startup-expo-ii-focuses-on-local-app.html')
+    h2 Sacramento Startup Expo II focuses on local app development, and booze
+    .subheading Sacramento Business Journal
+  +read('http://www.sacbee.com/news/business/article4026421.html')
+    h2 Startup Expo gets apps out there in Sacramento
+    .subheading The Sacramento Bee

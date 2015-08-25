@@ -58,14 +58,18 @@ h1, h2, h3, h4, h5, h6 {
   // font-weight: 600;
 }
 
+.subheading {
+  display: block;
+  @include msvw-font-size(4, 5);
+  font-family: 'bebas_neueregular';
+  color: $light-blue;
+}
+
 h2 {
   @include msvw-font-size(6, 3);
   margin-top: msvw(10);
   small {
-    display: block;
-    @include msvw-font-size(4, 5);
-    font-family: 'bebas_neueregular';
-    color: $light-blue;
+    @extend .subheading;
   }
 }
 
@@ -89,6 +93,11 @@ hr {
 }
 .u-arrow:after {
   content: ' »';
+}
+.u-bottom-attached {
+  position: absolute;
+  // right: msvw(10);
+  // bottom: msvw(10);
 }
 
 .hero {
@@ -120,6 +129,10 @@ hr {
 .hero__content {
   text-align: center;
   margin-top: msrem(11);
+  .btn {
+    margin-left: msvw(1);
+    margin-right: msvw(1);
+  }
   // position: relative;
   // padding-left: 2vw;
   // margin-left: 2vw;
@@ -193,9 +206,10 @@ hr {
   bottom: 5%;
 }
 
-.hero__heading {
+h1.hero__heading {
   @include msvw-font-size(7, 5);
   color: $yellow;
+  margin-bottom: msvw(3);
 }
 .hero__time {
   @include msrem-font-size(5, 0);
@@ -211,15 +225,18 @@ hr {
   margin-bottom: msrem(5);
 }
 .btn {
-  @include msrem-font-size(4, 4);
+  @include msrem-font-size(5, 4);
   border-width: $border-width;
   border-style: solid;
-  padding: msrem(5);
+  padding: msrem(6);
   display: inline-block;
   margin-bottom: msrem(4);
   color: $dark-blue;
   border-color: $dark-blue;
   text-decoration: none;
+  @include media(max-width $tiny-size) {
+    display: block;
+  }
 }
 .btn--primary {
   background: $dark-blue;
@@ -271,6 +288,21 @@ hr {
   }
 }
 
+@mixin internal-arrow {
+  position: relative;
+  @extend .u-arrow;
+  &:after {
+    position: absolute;
+    top: 50%;
+    right: msvw(7);
+    font-family: 'bebas_neuebook';
+    opacity: 0.5;
+    @include msvw-font-size(6, 0);
+    transform: translateY(-50%);
+    color: $light-blue;
+  }
+}
+
 .card {
   display: block;
   padding: msvw(7);
@@ -291,18 +323,42 @@ hr {
     background: $yellow;
     opacity: 1;
   }
+  @include internal-arrow;
+}
+
+.block {
   position: relative;
-  @extend .u-arrow;
-  &:after {
-    position: absolute;
-    top: 50%;
-    right: msvw(7);
-    font-family: 'bebas_neuebook';
-    opacity: 0.5;
-    @include msvw-font-size(6, 0);
-    transform: translateY(-50%);
-    color: $light-blue;
+  display: block;
+  &__content {
+    padding: msvw(10) 0;
   }
+  // width: 50vw;
+  // float: left;
+  h2 {
+    margin: 0;
+  }
+  .block__btn {
+    margin: 0;
+    @include msvw-font-size(4, 3);
+    padding: msvw(4);
+    // display: block;
+    text-align: center;
+    margin-right: $border-width;
+  }
+  .bg {
+    width: 100%;
+  }
+}
+.block:nth-child(odd) {
+  // background: rgba($yellow, 0.5);
+}
+.block:nth-child(odd) {
+  background: rgba($light-blue, 0.15);
+}
+
+.date {
+  @include msvw-font-size(3, 3);
+  margin-bottom: msvw(5);
 }
 
 .footer {

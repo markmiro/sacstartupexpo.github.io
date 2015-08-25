@@ -17,5 +17,8 @@
   ],
   "dependencies": {
     "reset-scss": "*"
+  },
+  "devDependencies": {
+    "jquery-unorphanize": "~1.0.1"
   }
 }
