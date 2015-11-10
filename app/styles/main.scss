@@ -207,9 +207,13 @@ hr {
 }
 
 h1.hero__heading {
-  @include msvw-font-size(7, 5);
+  @include msvw-font-size(7, 3);
   color: $yellow;
   margin-bottom: msvw(3);
+}
+.hero__subheading {
+  @include msvw-font-size(5, 3);
+  color: $light-blue;
 }
 .hero__time {
   @include msrem-font-size(5, 0);
@@ -245,6 +249,11 @@ h1.hero__heading {
 .btn--inverted {
   color: $yellow;
   border-color: $yellow;
+}
+.btn--inverted.btn--primary {
+  color: $dark-blue;
+  border-color: $yellow;
+  background: $yellow;
 }
 .btn--block {
   margin: msrem(4);
