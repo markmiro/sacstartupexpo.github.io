@@ -415,11 +415,18 @@ hr {
 
 h1.hero__heading {
   font-size: 13.7515654563vmin;
-  line-height: 12.0445878962vmin;
+  line-height: 10.8794034212vmin;
   -webkit-transform: translate(0vmin, 0vmin);
           transform: translate(0vmin, 0vmin);
   color: #FDED0B;
   margin-bottom: 1.0568566667vmin; }
+
+.hero__subheading {
+  font-size: 6.5405781005vmin;
+  line-height: 5.728698167vmin;
+  -webkit-transform: translate(0vmin, 0vmin);
+          transform: translate(0vmin, 0vmin);
+  color: #559CC9; }
 
 .hero__time {
   font-size: 1.5329479923rem;
@@ -463,6 +470,11 @@ h1.hero__heading {
 .btn--inverted {
   color: #FDED0B;
   border-color: #FDED0B; }
+
+.btn--inverted.btn--primary {
+  color: #1A274F;
+  border-color: #FDED0B;
+  background: #FDED0B; }
 
 .btn--block {
   margin: 0.3591661328rem;
