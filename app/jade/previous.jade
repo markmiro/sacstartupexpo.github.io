@@ -5,9 +5,19 @@ mixin block-link(link, title)
 
 mixin fbevent(id)
   +block-link('https://www.facebook.com/events/'+id, 'Facebook Event')
+  
+mixin meetupevent(id)
+  +block-link('https://www.meetup.com/HackerLab/events/'+id, 'Meetup Event')
 
 +page('previous', 'Previous Events')
   +title('Events')
+  .block
+    .block__content.content.u-center
+      h2
+        | Get Real!<br>...Estate Tech
+        small Expo #9
+      .date Aug 22, 2016
+      +meetupevent('236288457')  
   .block
     .block__content.content.u-center
       h2
